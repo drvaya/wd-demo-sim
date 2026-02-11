@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --retro-bg: #050505;
+  --retro-text: #00ff41; /* CRT Green */
+  --retro-accent: #ff00ff; /* Neon Magenta */
+  --retro-border: #008f11;
+  --retro-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+body {
+  background-color: var(--retro-bg);
+  color: var(--retro-text);
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: hidden;
+}
+
+/* CRT Scanline Effect */
+body::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+.retro-container {
+  border: 2px solid var(--retro-border);
+  box-shadow: var(--retro-shadow);
+  background-color: #000;
+}
+
+.retro-input {
+  background-color: #111;
+  border: 1px solid var(--retro-border);
+  color: var(--retro-text);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.retro-input:focus {
+  outline: none;
+  box-shadow: 0 0 15px var(--retro-text);
+}
+
+.retro-button {
+  background-color: var(--retro-border);
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.retro-button:hover {
+  background-color: var(--retro-text);
+  box-shadow: 0 0 20px var(--retro-text);
+}
+
+.retro-title {
+  text-shadow: 2px 2px var(--retro-accent);
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+}

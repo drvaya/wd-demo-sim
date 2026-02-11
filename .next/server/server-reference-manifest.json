@@ -1,0 +1,14 @@
+{
+  "node": {
+    "33e484b4b100a6a2e58032c6bc7eb7af64774fc3": {
+      "workers": {
+        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fdrvaya%2FDocuments%2FGitHub%2Fwd-demo-simu%2Fsrc%2Fapp%2Factions.ts%22%2C%5B%22updateProfile%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/page": "rsc"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "k/7U3mdrxn//aMkM92n5u4++oEcFL94QPTHhWH67R6U="
+}

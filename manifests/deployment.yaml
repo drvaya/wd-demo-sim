@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react2shell-app
+  labels:
+    app: react2shell
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react2shell
+  template:
+    metadata:
+      labels:
+        app: react2shell
+    spec:
+      securityContext:
+        runAsUser: 1001 # Non-root user (nextjs)
+        runAsGroup: 1001
+        fsGroup: 1001
+      containers:
+      - name: react2shell
+        image: react2shell-poc:latest # Assumes image is built and available (e.g. locally or in ECR)
+        imagePullPolicy: IfNotPresent # For local testing with kind/minikube, or generic
+        ports:
+        - containerPort: 3000
+        # Weak security context to allow exploration/PoC
+        securityContext:
+          allowPrivilegeEscalation: false
+          # capability drop is good practice but we leave it default-ish for PoC to ensure tools work if needed
