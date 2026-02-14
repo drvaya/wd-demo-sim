@@ -37,8 +37,8 @@ export default function Home() {
                 </div>
 
                 <div className="mt-8 text-[10px] text-gray-500 font-mono text-center space-y-1 opacity-50">
-                    <p>> initializing_kernel_v1.0.4...</p>
-                    <p>> session_confirmed_secure...</p>
+                    <p> initializing_kernel_v1.0.4...</p>
+                    <p> session_confirmed_secure...</p>
                 </div>
             </div>
 
