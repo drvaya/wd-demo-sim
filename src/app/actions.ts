@@ -63,5 +63,5 @@ export async function updateProfile(formData: FormData) {
     */
 
     revalidatePath('/');
-    return { message: 'Profile updated' };
+    //return { message: 'Profile updated' };
 }
